@@ -6,6 +6,56 @@
     <title>Java Code Editor</title>
 </head>
 <body>
-    <h1> TODO </h1>
+    <!-- Page Header (titles only) -->
+    <div class="header">
+        <span class="header-title">Monaco Editor - Java Projects</span>
+        <span class="header-subtitle">Folder & Files exploration (smart features to come).</span>
+    </div>
+
+    <!-- Toolbar, Action buttons -->
+    <ul class="toolbar">
+        <li>
+            <button id="file-btn" class="action-btn" title="Open File"> <img class="action-btn-icon" src="" /> </button>
+        </li>
+        <li>
+            <button id="folder-btn" class="action-btn" title="Open Folder"> <img class="action-btn-icon" src="" /> </button>
+        </li>
+        <li>
+            <!-- For spacing a bit ? Not clean -->
+        </li>
+        <li>
+            <button id="save-btn" class="action-btn" title="Save File"> <img class="action-btn-icon" src="" /> </button>
+        </li>
+        <li>
+            <button id="new-btn" class="action-btn" title="New File"> <img class="action-btn-icon" src="" /> </button>
+        </li>
+    </ul>
+
+    <!-- Hidden Input (for opening files) -->
+    <input type="file" id="file-input" accept=".java" hidden/>
+
+    <!-- Content Part (FileTree + Editor + Console) -->
+    <div class="content-row">
+        <!-- File-Tree -->
+        <div id="file-tree" class="file-tree"></div>
+
+        <!-- Monaco Editor -->
+        <div id="editor"></div>
+    </div>
+    
+    <!-- Run Code (Main.java execution) -->
+    <button id="run-code-btn">Run Code</button>
+
+    <!-- Output Console -->
+    <div id="output-console"><i>Output shall be displayed here</i></div>
+
+    <!-- Monaco Loader -->
+    <script src="https://unpkg.com/monaco-editor@latest/min/vs/loader.js"></script>
+
+    <!-- Scripts -->
+    <script src="scripts/monacoSetup.js"></script> <!-- Monaco Editor related settings -->
+    <script src="scripts/client.js"></script> <!-- Client-side unclassified bhaviours  -->
+    <script src="scripts/buttonEvents.js"></script> <!-- Handle both Action Buttons & Run Code -->
+
 </body>
 </html>
